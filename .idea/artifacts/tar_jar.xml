@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="tar:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/tar_jar</output-path>
+    <root id="archive" name="tar.jar">
+      <element id="module-output" name="tar" />
+    </root>
+  </artifact>
+</component>
