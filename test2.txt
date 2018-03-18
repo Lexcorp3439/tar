@@ -1,1 +1,1 @@
-(by openOut.txt 1)
+(by input6.txt 1)

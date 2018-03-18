@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Tar {
 
-
     public static void main(String[] args) throws IOException {
         int aLen = args.length;
 
@@ -14,7 +13,7 @@ public class Tar {
             throw new IllegalArgumentException("Введен неверный формат аргументов");
 
         if (aLen > 2 && args[aLen - 2].equals("-out")) {
-            if (!args[aLen - 1].matches("\\w+\\.txt"))
+            if (!args[aLen - 1].matches("(\\w+.txt\\\\)*\\w+\\.txt"))
                 throw new IllegalArgumentException("Введен неверный формат аргументов");
             File output = new File(args[aLen - 1]);
             FileWriter writer = new FileWriter(output);
@@ -27,8 +26,7 @@ public class Tar {
             u(args[1]);
     }
 
-
-    private static String out(String[] args, int size) throws IOException {
+    static String out(String[] args, int size) throws IOException {
         StringBuilder result = new StringBuilder("");
         int i = 0;
         int sizeOut = 0;
@@ -54,7 +52,7 @@ public class Tar {
 
     }
 
-    private static void u(String file) throws IOException {
+    static void u(String file) throws IOException {
         Scanner input = new Scanner(new FileReader(file));
         StringBuilder result = new StringBuilder("");
         String line;
@@ -66,8 +64,7 @@ public class Tar {
             if (!line.matches("\\(by [\\w]+\\.txt \\d+\\)")) {
                 result.append(line);
                 result.append("\n");
-            }
-            else{
+            } else {
                 line = line.substring(4, line.length() - 1);
                 lineArr = line.split(" ");
                 int extent = result.length();
