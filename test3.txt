@@ -1,6 +1,0 @@
-(by input7.txt 1)
-
-iuadfhviuhfdailiuhv
-dsafdca
-sdcsd
-(by input8.txt 6)
